@@ -1,0 +1,76 @@
+<!-- home page -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Vote App</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css"/>
+        <link href='https://fonts.googleapis.com/css?family=Corben:400,700' rel='stylesheet' type='text/css'>
+        <link href='/main.css' rel='stylesheet' type='text/css'/> 
+    </head>
+    <body>
+        
+        
+        
+        <div class="nav navbar">
+            <div class="container">
+                <ul class="nav nav-pills navbar-left">
+                    <li class="active" rel="home"><a>Home</a></li>
+                </ul>
+                <ul class="nav nav-pills navbar-right">
+                    <li class="green" rel="signup"><a>Sign Up</a></li>
+                    <li rel="login"><a>Login</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        
+        <div class="jumbotron main">
+            <h1>VoteTote</h1>
+            <p>Make custom polls with real time results.</p>
+            <!--hide this on click-->
+            <a rel="signup" class="btn btn-success">Sign Up</a>
+        </div>
+        
+        
+        <div class="panels">
+            
+            
+            <div id="home" class="panel active">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <img src="/img/fast.png"/>
+                            <h2>Fast Results</h2>
+                            <p>Live graphs show your poll results immediately in an easy to understand format. One graph will not provide the whole picture, that's why we provide multiple graph types to better describe your results.</p>
+                        </div>
+                        <div class="col-md-4">
+                            <img src="/img/globe.png"/>
+                            <h2>Universal</h2>
+                            <p>Traditional desktop computers now represent only 30% of Internet traffic. Your poll must work on the tablets, smart phones, netbooks and notebooks that your visitors are using. Our responsive designs do just that.</p>
+                        </div>
+                        <div class="col-md-4">
+                            <i class="fa fa-facebook-square"></i>
+                            <h2>Social Media</h2>
+                            <p>Free integrated facebook or traditional comments allow your poll voters to provide immediate feedback and discuss results. Social share buttons encourage your poll voters to help spread the word.</p>
+                        </div>
+                    </div>
+                
+            </div>
+            
+            
+            <div id="signup" class="panel">
+                <h1>SIGN UP PAGE</h1>
+            </div>
+            
+            
+            <div id="login" class="panel">
+                <h1>LOGIN PAGE</h1>
+            </div>
+            
+            
+        </div>
+        
+        <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+        <script src="/main.js"></script>
+    </body>
+</html>

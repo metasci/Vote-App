@@ -1,0 +1,54 @@
+body {
+    background-color: #ffffff;
+    padding: 0px;
+    font-family: 'Corben', cursive;
+}
+
+.navbar {
+    box-shadow: -1px 1px 6px black;
+    padding:3px;
+    margin: 0 30px;
+}
+.navbar .container {
+    width: auto;
+}
+.navbar .container ul li {
+    cursor: pointer;
+}
+.navbar .green a {
+    color: #5cb85c;
+}
+.navbar .green.active a, .navbar .green.active a:hover{
+    background-color: #5cb85c;
+}
+
+.main {
+    background-color: #4393b9;
+    color: white;
+    text-align: center;
+    margin: 75px auto;
+}
+.panel {
+    display: none;
+    width: 100%;
+}
+.panel.active {
+    display: inline-block;
+}
+
+.panel .row {
+    margin: 0 auto;
+    text-align: center;
+    width: 80%;
+}
+.panel i {
+    color: #3d5a98; 
+    font-size: 100px;
+}
+.panel img {
+    width: auto;
+    height: 100px;
+}
+.panel p {
+    font-size: 15px;
+}
