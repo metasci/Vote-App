@@ -8,11 +8,24 @@ $(function(){
     var navPills = $('.navbar .container ul li');
     var panel = $('.panels');
     var mainSign = $('.main a');
-    var green = $('.green');
+    var green = $('.green a');
     
     
+    var mainButton = 1;
     
     navPills.on('click', function(){
+        
+        if($(this).attr('rel') === 'home'){
+            mainButton = 1;
+        }else{
+            mainButton = 0;
+        }
+        if(mainButton){
+            mainSign.css({display: 'inline-block'});
+        }else {
+            mainSign.css({display: 'none'});
+        }
+        
         change($(this));
     });
     mainSign.on('click', function(){

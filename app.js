@@ -1,11 +1,13 @@
 
 // make these technologies available for use in this file
 var express = require('express');
-var session = require("express-session"); // is this necessary?
+var session = require("express-session"); // necessary for req.user in route.js
 var routes = require('./app/routes.js');
 var mongoose = require('mongoose');
 var passport = require('passport');
 var path = require('path');
+var bodyParser = require('body-parser');
+var flash = require('connect-flash');
 
 var app = express();
 
@@ -23,15 +25,22 @@ require('dotenv').load();
 require('./config/passport.js')(passport);
 
 // connect to database
-// why does mongod --nojournal not work
 mongoose.connect(process.env.MONGO_URI);
 
 
 
-
+// creates req.body object -- comes in handy with <form>
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
 // ------ figure out exactly what this is doing
+app.use(session({ secret: 'anything',
+    saveUninitialized: true,
+    resave: true
+}));
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(flash());
 
 
 routes(app, passport);

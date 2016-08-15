@@ -1,0 +1,60 @@
+
+
+.main {
+    background-color: #4393b9;
+    color: white;
+    text-align: center;
+    margin: 75px auto;
+}
+.main a {
+    display: inline-block;
+}
+.panel {
+    display: none;
+    width: 100%;
+}
+.panel.active {
+    display: inline-block;
+}
+
+#home .row {
+    margin: 0 auto;
+    text-align: center;
+    width: 80%;
+}
+#home i {
+    color: #3d5a98; 
+    font-size: 100px;
+}
+#home img {
+    width: auto;
+    height: 100px;
+}
+.panel p {
+    font-size: 15px;
+}
+
+.panels .container{
+    margin: 0 auto;
+    width: 30%;
+}
+
+.panels input {
+    border-radius: 3px;
+    width: 100%;
+}
+
+.panels input[type="submit"]{
+    background-color: #5cb85c;
+}
+.panels input[type="submit"]:hover{
+    background-color: #46a046;
+}
+.panels input[type="text"], .panels input[type="password"]{
+    height: 100%;
+    border: 1px solid lightgrey;
+}
+
+.panels .btn {
+    width: 100%;
+}

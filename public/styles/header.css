@@ -1,0 +1,34 @@
+body {
+    background-color: #ffffff;
+    padding: 0px;
+    font-family: 'Corben', cursive;
+}
+
+.navbar {
+    box-shadow: -1px 1px 6px black;
+    padding:3px;
+    margin: 0 30px;
+}
+.navbar .container {
+    width: auto;
+}
+.navbar .container ul li {
+    cursor: pointer;
+}
+.navbar .green a {
+    color: #5cb85c;
+}
+.navbar .green.active a, .navbar .green.active a:hover{
+    background-color: #5cb85c;
+}
+
+.username {
+    font-size: 20px;
+    margin-right: 40px;
+}
+.logout {
+    color: #d9534f;
+}
+.logout:hover {
+    color: #d9534f;
+}

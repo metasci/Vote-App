@@ -8,6 +8,11 @@ var User = new Schema({
         id: String,
         token: String,
         name: String
+    },
+    local: {
+        username: String,
+        email: String,
+        password: String
     }
 });
 
