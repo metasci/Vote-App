@@ -1,3 +1,5 @@
+var User = require('../app/models/user');
+
 
 module.exports = function(app, passport) {
     
@@ -7,14 +9,35 @@ module.exports = function(app, passport) {
         
         res.render('polls', {
             user: req.user,
-            logger: 1
+            logger: 1,
+            newPollShow: 'active',
+            congratShow: ''
         });
     });
   
     app.post('/newPoll', function(req, res){
-        res.send('got it');
+        User.findById(req.body.currentUser, function(err, user){
+            if(err) throw err;
+            
+            user.polls.push(makePoll(req.body));
+            
+            user.update(user, function(err, user){
+                if(err) throw err;
+                
+                console.log("database updated", user);
+            
+            });
+                // res.json(user);
+            
+            res.render('polls', {
+                user: user,
+                logger: 1,
+                newPollShow: '',
+                congratShow: 'active'
+            });
+        });
         // save poll data to db in user profile
-        // create url with question 
+        // create url with   -- if url already exists -- alert user and provide link to existing poll 
     });
 };
 
@@ -25,5 +48,14 @@ function isLoggedIn(req, res, next){
         return next();
     }else {
         res.redirect('/');
+    }
+}
+
+
+
+function makePoll(body){
+    return {
+        question: body.pollName,
+        options: body.option
     }
 }

@@ -13,10 +13,8 @@ var User = new Schema({
         username: String,
         email: String,
         password: String
-    }//,
-    //polls: {
-        //saved user polls --   
-    //}
+    },
+    polls: []
 });
 
 module.exports = mongoose.model('User', User);

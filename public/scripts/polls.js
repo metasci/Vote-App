@@ -16,7 +16,7 @@ $(function(){
     });
     
     $optBtn.on('click', function() {
-       $options.append('<input type="text" placeholder="New Option">');
+       $options.append('<input type="text" placeholder="New Option" name="option">');
     });
     
     

@@ -1,18 +1,14 @@
+#To-Do
 
-     ,-----.,--.                  ,--. ,---.   ,--.,------.  ,------.
-    '  .--./|  | ,---. ,--.,--. ,-|  || o   \  |  ||  .-.  \ |  .---'
-    |  |    |  || .-. ||  ||  |' .-. |`..'  |  |  ||  |  \  :|  `--, 
-    '  '--'\|  |' '-' ''  ''  '\ `-' | .'  /   |  ||  '--'  /|  `---.
-     `-----'`--' `---'  `----'  `---'  `--'    `--'`-------' `------'
-    ----------------------------------------------------------------- 
+###generate custom urls for each user poll
+####display in congrats panel (only most recent)
 
+###build custom page generator for each custom url and link them
+####make available to unauthenticated voters
 
-Hi there! Welcome to Cloud9 IDE!
+###link my-polls panel elements to unique user dashboard info pages
+####probably similar to publicly available page -- but with extra functionality
 
-To get you started, create some files, play with the terminal,
-or visit http://docs.c9.io for our documentation.
-If you want, you can also go watch some training videos at
-http://www.youtube.com/user/c9ide.
+###add password change functionality to authenticated navbar
 
-Happy coding!
-The Cloud9 IDE team
+###remove guest login capability

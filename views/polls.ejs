@@ -23,23 +23,42 @@
         <div class="panels">
             
             <!--center these panels-->
-            <div class="panel col-lg-4 col-md-4 col-sm-12 col-xs-12 col-centered new-poll active">
-                <h2>New Poll</h2>
-                <form id="new-poll" action="/newPoll" method="post">
-                    <p>Name your poll.</p>
-                    <input type="text" name="pollName" placeholder="What's your favorite lunch?">
-                    <p>Options</p>
-                    <div id="options">
-                        <input type="text" placeholder="Macaroni">
-                        <input type="text" placeholder="Hot Pockets">
-                    </div>
-                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 col-centered btn btn-default">More Options</div><br><br>
-                    <input class="col-lg-6 col-md-6 col-sm-6 col-xs-6 col-centered btn btn-success" type="submit">
-                </form>
-                
+            <div class="panel col-lg-4 col-md-4 col-sm-12 col-xs-12 new-poll <%= newPollShow %>">
+                <div class="container">
+                    <h2>New Poll</h2>
+                    <form id="new-poll" action="/newPoll" method="post">
+                        <input style="display:none" value="<%= user._id %>" name="currentUser">
+                        <p>Name your poll.</p>
+                        <input type="text" name="pollName" placeholder="What's your favorite lunch?">
+                        <p>Options</p>
+                        <div id="options">
+                            <input type="text" placeholder="Macaroni" name="option">
+                            <input type="text" placeholder="Hot Pockets" name="option">
+                        </div>
+                        <!--<div class="box">-->
+                        <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 centered-btn">
+                            <!---->
+                            <div class="btn btn-default">More Options</div><br><br>
+                            <input class="btn btn-success" type="submit">
+                            <!---->
+                        </div>
+                        <!--</div>-->
+                    </form>
+                </div>
             </div>
             
-            <div class="panel my-polls">My Polls Panel</div>
+            <div class="panel col-lg-4 col-md-4 col-sm-12 col-xs-12  my-polls">
+                <!--you will want to show poll url inside the individual polls-->
+                <div class="list-group container">
+                <!--doesn't update automatically on new poll submit-->
+                    <% user.polls.forEach(function(poll){ %>
+                        <a style="cursor: default" class="list-group-item"><%= poll.question %><span title="delete" class="btn btn-danger"><i class="glyphicon glyphicon-trash"></i></span></a>
+                    <% }); %>
+                </div>
+            </div>
+            
+            
+            <div class="panel congrats <%= congratShow %>">Congrats panel</div>
             
         </div>
         
