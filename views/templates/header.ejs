@@ -2,21 +2,24 @@
 <div class="nav navbar">
     <div class="container">
         <ul class="nav nav-pills navbar-left">
+            <li class="brand">VoteTote</li>
             <% if(logger){ %>
-                <li><a class="logout" href="/logout">Log Out</a></li>
+                <li><a class="logout point" href="/logout">Log Out</a></li>
             <% } else {%>
-                <li class="active" rel="home"><a>Home</a></li>
+                <li class="point <%= home %>" rel="home"><a>Home</a></li>
             <% } %>            
         </ul>
         <ul class="nav nav-pills navbar-right">
             <% if(logger) { %>    
+            
+                <!--add cog icon for changing password-->
+                
                 <!--say "hi, (users first name)"-->
                 <li class="username">Hi, <%= user.facebook.name ? user.facebook.name.split(' ')[0] : user.local.username.split(' ')[0] %></li>
                 
-                <!--logout button-->
             <% } else {%>
-                <li class="green" rel="signup"><a>Sign Up</a></li>
-                <li rel="login"><a>Login</a></li>
+                <li class="green point <%= signup %>" rel="signup"><a>Sign Up</a></li>
+                <li class="point <%= login %>" rel="login"><a>Login</a></li>
             <% } %>
         </ul>
     </div>

@@ -1,5 +1,3 @@
-// alert('yo');
-
 
 $(function(){
     

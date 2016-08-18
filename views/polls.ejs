@@ -13,6 +13,38 @@
         
         <% include templates/header.ejs %>
         
-        <%= home %>
+        <div class="main jumbotron">
+            <h1>Dashboard</h1>
+            <h3>What would you like to do today?</h3>
+            <a rel="new-poll" class="menu btn btn-success">New Poll</a><a rel="my-polls" class="menu btn btn-primary">My Polls</a>
+        </div>
+        
+        
+        <div class="panels">
+            
+            <!--center these panels-->
+            <div class="panel col-lg-4 col-md-4 col-sm-12 col-xs-12 col-centered new-poll active">
+                <h2>New Poll</h2>
+                <form id="new-poll" action="/newPoll" method="post">
+                    <p>Name your poll.</p>
+                    <input type="text" name="pollName" placeholder="What's your favorite lunch?">
+                    <p>Options</p>
+                    <div id="options">
+                        <input type="text" placeholder="Macaroni">
+                        <input type="text" placeholder="Hot Pockets">
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 col-centered btn btn-default">More Options</div><br><br>
+                    <input class="col-lg-6 col-md-6 col-sm-6 col-xs-6 col-centered btn btn-success" type="submit">
+                </form>
+                
+            </div>
+            
+            <div class="panel my-polls">My Polls Panel</div>
+            
+        </div>
+        
+        
+        <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+        <script src="scripts/polls.js"></script>
     </body>
 </html>

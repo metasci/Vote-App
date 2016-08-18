@@ -25,7 +25,7 @@
         <div class="panels">
             
             
-            <div id="home" class="panel active">
+            <div id="home" class="panel <%= home %>">
                     <div class="row">
                         <div class="col-md-4">
                             <img src="/img/fast.png"/>
@@ -47,38 +47,9 @@
             </div>
             
             
-            <div id="signup" class="panel">
-                <div class="container">
-                    <!--<div class="alert alert-danger">AHHHHHHH</div>-->
-                    <% if(message.length > 0) { %>
-                        <div class="alert alert-danger"><%= message %></div>
-                    <% } %>
-                    <form action="/signup" method="post">
-                        Name<br><input type="text" name="name"><br>
-                        <!-- make error message if email taken -->
-                        Email<br><input type="text" name="email"><br>
-                        <!-- make error message if password too short -->
-                        Password<br><input type="password" name="password"><br><br>
-                        <div class="row">
-                            <div class="col-lg-6 col-md-6"><input class="btn btn-success" type="submit" value="Sign Up"></div><div class="col-lg-6 col-md-6"><a href='/auth/facebook' class="btn btn-primary"><i class="fa fa-facebook fa-fw"></i>Connect with Facebook</a></div>
-                        </div>
-                    </form>
-                </div>
-            </div>
+            <% include templates/signup.ejs %>
             
-            
-            <div id="login" class="panel">
-                <div class="container">
-                    <form action="/login" method="post">
-                        Email<br><input type="text" name="email"><br>
-                        Password<br><input type="password" name="password"><br><br>
-                        <div class="row">
-                            <div class="col-lg-6 col-md-6"><input class="btn btn-success" type="submit" value="Login"></div><div class="col-lg-6 col-md-6"><a href='/auth/facebook' class="btn btn-primary"><i class="fa fa-facebook fa-fw"></i>Connect with Facebook</a></div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-            
+            <% include templates/login.ejs %>
             
         </div>
         

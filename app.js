@@ -3,6 +3,7 @@
 var express = require('express');
 var session = require("express-session"); // necessary for req.user in route.js
 var routes = require('./app/routes.js');
+var polls = require('./app/poll_route.js')
 var mongoose = require('mongoose');
 var passport = require('passport');
 var path = require('path');
@@ -27,7 +28,7 @@ require('./config/passport.js')(passport);
 // connect to database
 mongoose.connect(process.env.MONGO_URI);
 
-
+// limit db size -- mLab billing 
 
 // creates req.body object -- comes in handy with <form>
 app.use(bodyParser.urlencoded({
@@ -44,7 +45,7 @@ app.use(flash());
 
 
 routes(app, passport);
-
+polls(app, passport);
 
 var port = process.env.PORT || 8080;
 app.listen(port, function(){

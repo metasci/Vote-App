@@ -4,6 +4,7 @@ var User = require('../app/models/user');
 var configAuth = require("./auth");
 
 module.exports = function(passport){
+    
     passport.serializeUser(function(user, done){
         done(null, user.id);
     });
@@ -14,19 +15,38 @@ module.exports = function(passport){
         });
     });
     
+    
+   
+    passport.use('local-login', new localStrategy({
+        usernameField: 'email',
+        passReqToCallback: true
+    },
+    function(req, email, password, done){
+        process.nextTick(function(){
+            User.findOne({'local.email': email}, function(err, user){
+                if(err) return done(err);
+                if(!user) return done(null, false, req.flash('loginMessage', 'No User Found'));
+                if(user.local.password !== password) return done(null, false, req.flash('loginMessage', 'Invalid Password'));
+                
+                return done(null, user);
+                
+            });
+        });
+    }));
+    
     passport.use('local-signup', new localStrategy({
         usernameField: 'email',
         passReqToCallback: true
     }, 
     function(req, email, password, done){
-        console.log(req.body);
+        // console.log(req.body);
         process.nextTick(function(){
             User.findOne({'local.email': email}, function(err, user){
                 if(err) return done(err);
                 if(user){           
                     return done(null, false, req.flash('signupMessage', 'That email already taken!'));
                 } else if(password.length < 3){
-                    return done(null, false, req.flash('signupMessage', 'Password must be longer than 3 characters!'));
+                    return done(null, false, req.flash('signupPasswordMessage', 'Password must be longer than 3 characters!'));
                 }else {
                     var newUser = new User();
                     
@@ -41,9 +61,7 @@ module.exports = function(passport){
                 }
             });
         });
-    }
-    
-    ));
+    }));
     
     
     passport.use(new facebookStrategy({
@@ -77,4 +95,4 @@ module.exports = function(passport){
             });
         }));
     
-}
+};

@@ -1,0 +1,36 @@
+.main {
+    background-color: #4393b9;
+    color: white;
+    text-align: center;
+    margin: 75px auto;
+}
+.main a {
+    display: inline-block;
+    margin: 10px;
+}
+
+
+/*center bootstrap col*/
+.col-centered {
+    float: none;
+    margin: 0 auto;
+}
+
+
+.panels{
+    /*background-color: blue;*/
+    text-align: center;
+}
+.panels input[type="text"] {
+    border: 1px solid lightgrey;
+    border-radius: 3px;
+    font-size: 20px;
+    margin: 5px 0;
+    width: 100%;
+}
+.panels .panel {
+    display: none;
+}
+.panels .panel.active {
+    display: inline-block;
+}
